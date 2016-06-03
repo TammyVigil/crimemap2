@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="crimemap2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acP-NQ-svk">
+                                <rect key="frame" x="0.0" y="13" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Rockford Crime Map" id="Kg0-f3-PGf"/>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="scD-n7-teL">
+                                <rect key="frame" x="0.0" y="57" width="600" height="447"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 24 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeF-uK-1jG">
+                                <rect key="frame" x="0.0" y="512" width="593" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="c6P-sp-Nnd">
+                                <rect key="frame" x="9" y="550" width="573" height="31"/>
+                                <connections>
+                                    <action selector="DateSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="z44-ib-dMe"/>
+                                    <action selector="SateSliderUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wUg-bP-YHr"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c6P-sp-Nnd" firstAttribute="top" secondItem="LeF-uK-1jG" secondAttribute="bottom" constant="17" id="5Zj-09-EKZ"/>
+                            <constraint firstItem="LeF-uK-1jG" firstAttribute="top" secondItem="scD-n7-teL" secondAttribute="bottom" constant="8" symbolic="YES" id="5sY-hR-mGa"/>
+                            <constraint firstItem="LeF-uK-1jG" firstAttribute="leading" secondItem="scD-n7-teL" secondAttribute="leading" id="728-Ew-zX7"/>
+                            <constraint firstItem="acP-NQ-svk" firstAttribute="trailing" secondItem="scD-n7-teL" secondAttribute="trailing" id="Chl-Vz-ffj"/>
+                            <constraint firstItem="acP-NQ-svk" firstAttribute="leading" secondItem="scD-n7-teL" secondAttribute="leading" id="GSH-Fx-vtw"/>
+                            <constraint firstItem="c6P-sp-Nnd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Sft-40-LYd"/>
+                            <constraint firstItem="scD-n7-teL" firstAttribute="top" secondItem="acP-NQ-svk" secondAttribute="bottom" id="WrJ-k2-Yp4"/>
+                            <constraint firstAttribute="bottom" secondItem="c6P-sp-Nnd" secondAttribute="bottom" constant="20" symbolic="YES" id="ahZ-Db-vBS"/>
+                            <constraint firstAttribute="trailing" secondItem="scD-n7-teL" secondAttribute="trailing" id="bO6-ab-cNo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LeF-uK-1jG" secondAttribute="trailing" constant="-13" id="npO-mn-eOe"/>
+                            <constraint firstItem="acP-NQ-svk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oNs-q2-gP7"/>
+                            <constraint firstItem="c6P-sp-Nnd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-9" id="qYO-4h-rb1"/>
+                            <constraint firstItem="acP-NQ-svk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="13" id="qm8-zY-sBn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblCrimeRange" destination="LeF-uK-1jG" id="BHn-xr-fGH"/>
+                        <outlet property="mapView" destination="scD-n7-teL" id="5jH-j7-62l"/>
+                        <outlet property="navigationBar" destination="acP-NQ-svk" id="ZHk-j2-yGh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="429"/>
+        </scene>
+    </scenes>
+</document>
